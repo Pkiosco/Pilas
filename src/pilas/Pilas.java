@@ -16,24 +16,28 @@ public class Pilas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PillaLlenaException {
         Scanner Teclado = new Scanner(System.in); 
         System.out.println("Ingrese el tamaño de la pila (VALOR NUMERICO)");
         
         int T = Teclado.nextInt();
-        pila <String> p = new pila(T);
+        Pila <String> p = new Pila(T);
 
         String E = new String();
 
-
-        while(p.isFull() == false ){
-        E = Teclado.next();
-        p.Push(E);
-        E = null;                
-        };
-        
-        p.Listar();
+        try{
+            while(p.isFull() == false ){
+            E = Teclado.next();
+            p.push(E);
+            E = null;                
+            }
+        }catch (PillaLlenaException error){
+            System.out.println("Se Produjo un error");
+            System.out.println("descripcion: " +error);
+        }
+        p.listar();
        // System.out.println(p.Pop());;
+       
     }
     
 }
