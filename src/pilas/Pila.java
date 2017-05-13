@@ -35,7 +35,6 @@ package pilas;
     public T  pop() throws PilaVaciaException{
         if (isEmpty()){
             throw new PilaVaciaException("La pila estrat vacia");
-            //return null;
         }else{
             T Pope = elementos[Indice];
             elementos[Indice--] = null;

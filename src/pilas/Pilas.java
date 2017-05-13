@@ -16,7 +16,7 @@ public class Pilas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws PillaLlenaException {
+    public static void main(String[] args) throws PillaLlenaException,PilaVaciaException {
         Scanner Teclado = new Scanner(System.in); 
         System.out.println("Ingrese el tamaño de la pila (VALOR NUMERICO)");
         
@@ -36,6 +36,15 @@ public class Pilas {
             System.out.println("descripcion: " +error);
         }
         p.listar();
+        
+        try{
+           p.pop(); 
+            
+            
+        }catch (PilaVaciaException error2){
+            System.out.println("Se produjo un error recuperando un item");
+            System.out.println("Descripcion: " + error2);
+        }
        // System.out.println(p.Pop());;
        
     }
